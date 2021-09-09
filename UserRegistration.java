@@ -7,21 +7,21 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter first name");
-		String firstName = scan.nextLine();
-		System.out.println("Enter last name");
-		String lastName = scan.nextLine();
-		System.out.println("Enter email id");
-		String email = scan.nextLine();
-		System.out.println("Enter phoneNumber");
-		String phoNumber = scan.nextLine();
+//		System.out.println("Enter first name");
+//		String firstName = scan.nextLine();
+//		System.out.println("Enter last name");
+//		String lastName = scan.nextLine();
+//		System.out.println("Enter email id");
+//		String email = scan.nextLine();
+//		System.out.println("Enter phoneNumber");
+//		String phoNumber = scan.nextLine();
 		System.out.println("Enter password");
 		String password = scan.nextLine();
 		UserRegistration userRegistration = new UserRegistration();
-		userRegistration.nameValidation(firstName);
-		userRegistration.lastNameValidation(lastName);
-		userRegistration.emailValidation(email);
-		userRegistration.phoneNumberValidation(phoNumber);
+//		userRegistration.nameValidation(firstName);
+//		userRegistration.lastNameValidation(lastName);
+//		userRegistration.emailValidation(email);
+//		userRegistration.phoneNumberValidation(phoNumber);
 		userRegistration.passwordValidation(password);
 	}
 
@@ -48,16 +48,15 @@ public class UserRegistration {
 	}
 
 	public void phoneNumberValidation(String phoNumber) {
-		String phoneRegex = "^[0-9]{2}\\s{0,1}[0-9]{10}"; // PhoneNumber Validation
+		String phoneRegex = "^[0-9]{2}\\s{1}[0-9]{10}"; // PhoneNumber Validation
 		Pattern pattern = Pattern.compile(phoneRegex);
 		Matcher matcher = pattern.matcher(phoNumber);
 		System.out.println("is valid phone number: " + matcher.matches());
 	}
 
 	public void passwordValidation(String password) {
-		String passwordRegex = "^[A-Za-z0-9]{8,20}"; // password validation
+		String passwordRegex = "^(?=.*[A-Z])[a-z0-9]+.{8,20}$"; // password validation
 		Pattern pattern = Pattern.compile(passwordRegex);
 		Matcher matcher = pattern.matcher(password);
 		System.out.println("is valid password: " + matcher.matches());
-	}
-}
+	}}
