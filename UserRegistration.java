@@ -15,11 +15,14 @@ public class UserRegistration {
 		String email = scan.nextLine();
 		System.out.println("Enter phoneNumber");
 		String phoNumber = scan.nextLine();
+		System.out.println("Enter password");
+		String password = scan.nextLine();
 		UserRegistration userRegistration = new UserRegistration();
 		userRegistration.nameValidation(firstName);
 		userRegistration.lastNameValidation(lastName);
 		userRegistration.emailValidation(email);
 		userRegistration.phoneNumberValidation(phoNumber);
+		userRegistration.passwordValidation(password);
 	}
 
 	public void nameValidation(String fname) {
@@ -44,10 +47,17 @@ public class UserRegistration {
 		System.out.println("is valid: " + matcher.matches());
 	}
 
-	private void phoneNumberValidation(String phoNumber) {
-		String phoneRegex = "^[0-9]{2}\\s{1}[0-9]{10}"; // PhoneNumber Validation
+	public void phoneNumberValidation(String phoNumber) {
+		String phoneRegex = "^[0-9]{2}\\s{0,1}[0-9]{10}"; // PhoneNumber Validation
 		Pattern pattern = Pattern.compile(phoneRegex);
 		Matcher matcher = pattern.matcher(phoNumber);
 		System.out.println("is valid phone number: " + matcher.matches());
+	}
+
+	public void passwordValidation(String password) {
+		String passwordRegex = "^[A-Za-z0-9]{8,20}"; // password validation
+		Pattern pattern = Pattern.compile(passwordRegex);
+		Matcher matcher = pattern.matcher(password);
+		System.out.println("is valid password: " + matcher.matches());
 	}
 }
