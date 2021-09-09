@@ -55,8 +55,9 @@ public class UserRegistration {
 	}
 
 	public void passwordValidation(String password) {
-		String passwordRegex = "^(?=.*[A-Z])[a-z0-9]+.{8,20}$"; // password validation
+		String passwordRegex = "^(?=.*[A-Z])(?=.*[0-9])[a-z]+.{8,20}$"; // password validation
 		Pattern pattern = Pattern.compile(passwordRegex);
 		Matcher matcher = pattern.matcher(password);
 		System.out.println("is valid password: " + matcher.matches());
-	}}
+	}
+}
