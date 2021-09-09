@@ -11,9 +11,12 @@ public class UserRegistration {
 		String firstName = scan.nextLine();
 		System.out.println("Enter last name");
 		String lastName = scan.nextLine();
+		System.out.println("Enter email id");
+		String email = scan.nextLine();
 		UserRegistration userRegistration = new UserRegistration();
 		userRegistration.nameValidation(firstName);
 		userRegistration.lastNameValidation(lastName);
+		userRegistration.emailValidation(email);
 	}
 
 	public void nameValidation(String fname) {
@@ -31,4 +34,10 @@ public class UserRegistration {
 
 	}
 
+	public void emailValidation(String email) {
+		String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"; // email validation
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		System.out.println("is valid: " + matcher.matches());
+	}
 }
