@@ -7,21 +7,21 @@ import java.util.regex.Pattern;
 public class UserRegistration {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-//		System.out.println("Enter first name");
-//		String firstName = scan.nextLine();
-//		System.out.println("Enter last name");
-//		String lastName = scan.nextLine();
-//		System.out.println("Enter email id");
-//		String email = scan.nextLine();
-//		System.out.println("Enter phoneNumber");
-//		String phoNumber = scan.nextLine();
+		System.out.println("Enter first name");
+		String firstName = scan.nextLine();
+		System.out.println("Enter last name");
+		String lastName = scan.nextLine();
+		System.out.println("Enter email id");
+		String email = scan.nextLine();
+		System.out.println("Enter phoneNumber");
+		String phoNumber = scan.nextLine();
 		System.out.println("Enter password");
 		String password = scan.nextLine();
 		UserRegistration userRegistration = new UserRegistration();
-//		userRegistration.nameValidation(firstName);
-//		userRegistration.lastNameValidation(lastName);
-//		userRegistration.emailValidation(email);
-//		userRegistration.phoneNumberValidation(phoNumber);
+		userRegistration.nameValidation(firstName);
+		userRegistration.lastNameValidation(lastName);
+		userRegistration.emailValidation(email);
+		userRegistration.phoneNumberValidation(phoNumber);
 		userRegistration.passwordValidation(password);
 	}
 
@@ -55,7 +55,7 @@ public class UserRegistration {
 	}
 
 	public void passwordValidation(String password) {
-		String passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@+.-]).{8,20}$"; // password validation
+		String passwordRegex = "^[A-Za-z0-9]{8,20}"; // password validation
 		Pattern pattern = Pattern.compile(passwordRegex);
 		Matcher matcher = pattern.matcher(password);
 		System.out.println("is valid password: " + matcher.matches());
