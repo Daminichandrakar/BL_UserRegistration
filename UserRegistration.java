@@ -5,7 +5,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-	
 	public boolean nameValidation(String fname) {
 		String regex = "^[A-Z][a-z]{2,}"; // name validation name start with cap and contain 3 characters
 		Pattern pattern = Pattern.compile(regex);
@@ -41,4 +40,5 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(password);
 		return matcher.matches();
 	}
+
 }
