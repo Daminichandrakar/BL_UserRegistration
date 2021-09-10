@@ -69,29 +69,4 @@ class UserRegistrationTest {
 		assertEquals(false, value);
 	}
 
-//	@RunWith(Parameterized.class)
-//	public class ValidEmailTest {
-//		private String email12test;
-//		private String expectedResult;
-//
-//		public ValidEmailTest(String email, String expectedResult) {
-//			this.email12test = email;
-//			this.expectedResult = expectedResult;
-//		}
-//
-//		@Parameterized.Parameters
-//		public Collection data() {
-//			return Arrays.asList(new Object[][] { { "abc@yahoo.com", true }, { "abc111@abc.com", true },
-//					{ "abc@1.com", true }, { "abc", false }, { "abcgmail.com", false } });
-//		}
-//
-//		@Test
-//		public void givenEmail_WhenProper_ShouldReturnTrue1() {
-//			boolean value = user.emailValidation(this.email12test);
-//			assertEquals(expectedResult, value);
-//		}
-//
-//		
-//	}
-
 }
